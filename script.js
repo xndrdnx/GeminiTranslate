@@ -1,3 +1,9 @@
+// Функция для переключения видимости аккордеона
+function toggleAccordion() {
+    const content = document.querySelector('.accordion-content');
+    content.classList.toggle('active');
+}
+
 document.getElementById('translate-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
@@ -6,7 +12,7 @@ document.getElementById('translate-form').addEventListener('submit', async funct
     const downloadBtn = document.getElementById('download-btn');
     status.textContent = 'Перевод начался...';
     translateBtn.disabled = true;
-    downloadBtn.disabled = true; // Убедимся, что кнопка Download тоже изначально отключена
+    downloadBtn.disabled = true;
 
     const formData = new FormData(this);
     const pdfUpload = document.getElementById('pdf-upload').files[0];
