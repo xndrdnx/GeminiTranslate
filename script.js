@@ -18,7 +18,7 @@ document.getElementById('translate-form').addEventListener('submit', async funct
     }
 
     try {
-        const response = await fetch('http://uuserrrr.pythonanywhere.com/translate', { // Замените на ваш URL
+        const response = await fetch('https://uuserrrr.pythonanywhere.com/translate', { // Замените на ваш URL
             method: 'POST',
             body: formData
         });
