@@ -6,6 +6,7 @@ document.getElementById('translate-form').addEventListener('submit', async funct
     const downloadBtn = document.getElementById('download-btn');
     status.textContent = 'Перевод начался...';
     translateBtn.disabled = true;
+    downloadBtn.disabled = true; // Убедимся, что кнопка Download тоже изначально отключена
 
     const formData = new FormData(this);
     const pdfUpload = document.getElementById('pdf-upload').files[0];
@@ -18,7 +19,7 @@ document.getElementById('translate-form').addEventListener('submit', async funct
     }
 
     try {
-        const response = await fetch('https://uuserrrr.pythonanywhere.com/translate', { // Замените на ваш URL
+        const response = await fetch('https://username.pythonanywhere.com/translate', { // Замените на ваш URL
             method: 'POST',
             body: formData
         });
@@ -32,6 +33,7 @@ document.getElementById('translate-form').addEventListener('submit', async funct
         const url = window.URL.createObjectURL(blob);
         status.textContent = 'Перевод завершен!';
         downloadBtn.disabled = false;
+        translateBtn.disabled = false;
 
         downloadBtn.onclick = () => {
             const a = document.createElement('a');
