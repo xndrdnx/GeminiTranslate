@@ -37,7 +37,7 @@ document.getElementById('translate-form').addEventListener('submit', async funct
 
         const blob = await response.blob();
         const url = window.URL.createObjectURL(blob);
-        status.textContent = 'Перевод завершен!';
+        status.textContent = 'Перевод завершён!';
         downloadBtn.disabled = false;
         translateBtn.disabled = false;
 
